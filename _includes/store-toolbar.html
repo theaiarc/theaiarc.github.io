@@ -1,0 +1,36 @@
+{%- comment -%}
+Store toolbar: instant-search box + category filter pills.
+Usage: {% include store-toolbar.html scope="all" %}  (scope: all | apps | templates)
+store.js reads [data-store-search] and .cat-pill[data-filter] to show/hide cards.
+Filter syntax: all | type:app | type:template | category:<domain> | status:<status>
+{%- endcomment -%}
+{% assign scope = include.scope | default: "all" %}
+<div class="store-toolbar reveal">
+    <div class="store-search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" class="form-control" data-store-search
+               placeholder="{% if scope == 'apps' %}Search apps{% elsif scope == 'templates' %}Search templates{% else %}Search apps & templates{% endif %}"
+               aria-label="Search" autocomplete="off">
+    </div>
+    <div class="cat-pills" role="tablist" aria-label="Filter">
+        <button type="button" class="cat-pill is-active" data-filter="all">All</button>
+        {% if scope == "all" %}
+            <button type="button" class="cat-pill" data-filter="type:app">Apps</button>
+            <button type="button" class="cat-pill" data-filter="type:template">Templates</button>
+            {% assign domains = site.templates | map: "domain" | compact | uniq | sort %}
+            {% for d in domains %}
+            <button type="button" class="cat-pill" data-filter="category:{{ d | downcase }}">{{ d }}</button>
+            {% endfor %}
+        {% elsif scope == "apps" %}
+            {% assign statuses = site.apps | map: "status" | compact | uniq | sort %}
+            {% for s in statuses %}
+            <button type="button" class="cat-pill" data-filter="status:{{ s }}">{{ s | replace: '-', ' ' }}</button>
+            {% endfor %}
+        {% elsif scope == "templates" %}
+            {% assign domains = site.templates | map: "domain" | compact | uniq | sort %}
+            {% for d in domains %}
+            <button type="button" class="cat-pill" data-filter="category:{{ d | downcase }}">{{ d }}</button>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

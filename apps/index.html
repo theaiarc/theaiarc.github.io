@@ -8,21 +8,11 @@ description: Applications and products built by Hemant Patkar.
 
 {% assign all_apps = site.apps | sort: "order" %}
 {% if all_apps.size > 0 %}
-<div class="card-grid apps-index">
-    {% for app in all_apps %}
-    <a class="app-card reveal" href="{{ app.url }}">
-        <span class="app-icon" style="background: {{ app.accent | default: '#3b5bdb' }}">
-            <i class="fa-solid {{ app.icon | default: 'fa-rocket' }}"></i>
-        </span>
-        <div class="app-card-body">
-            <h3>{{ app.name | default: app.title }}
-                {% if app.status %}<span class="badge-status status-{{ app.status }}">{{ app.status | replace: '-', ' ' }}</span>{% endif %}
-            </h3>
-            <p>{{ app.tagline }}</p>
-        </div>
-    </a>
-    {% endfor %}
+{% include store-toolbar.html scope="apps" %}
+<div class="card-grid apps-index" data-store-filterable style="margin-top:1.8rem">
+    {% for app in all_apps %}{% include app-card.html app=app %}{% endfor %}
 </div>
+<p class="store-empty" hidden>No apps match — try a different search or filter.</p>
 {% else %}
 <p class="text-secondary reveal">Apps are on the way — check back soon.</p>
 {% endif %}

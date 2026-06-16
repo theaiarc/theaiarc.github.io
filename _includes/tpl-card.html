@@ -1,0 +1,22 @@
+{%- comment -%}
+Shared template card. Usage: {% include tpl-card.html t=t %}
+Preserves demo_url external-link logic. data-* hooks power store.js search/filter.
+{%- endcomment -%}
+{% assign href = include.t.url %}{% assign isdemo = false %}
+{% if include.t.demo_url and include.t.demo_url != "#" %}{% assign href = include.t.demo_url %}{% assign isdemo = true %}{% endif %}
+<a class="tpl-card reveal" href="{{ href }}"{% if isdemo %} target="_blank" rel="noopener"{% endif %}
+   data-type="template"
+   data-name="{{ include.t.name | default: include.t.title | downcase }}"
+   data-tags="{{ include.t.tagline | downcase }}"
+   data-category="{{ include.t.domain | default: 'template' | downcase }}">
+    <div class="tpl-thumb"><img src="{{ include.t.image }}" alt="{{ include.t.name | default: include.t.title }}" loading="lazy"></div>
+    <div class="tpl-card-body">
+        {% if include.t.domain %}<span class="tpl-domain-badge">{{ include.t.domain }}</span>{% endif %}
+        <h3>{{ include.t.name | default: include.t.title }}</h3>
+        <p>{{ include.t.tagline }}</p>
+        <div class="tpl-card-foot">
+            {% if include.t.price %}<span class="tpl-price-sm">{{ include.t.price }}</span>{% endif %}
+            <span class="link-arrow">{% if isdemo %}View template <i class="fa-solid fa-arrow-up-right-from-square"></i>{% else %}View <i class="fa-solid fa-arrow-right"></i>{% endif %}</span>
+        </div>
+    </div>
+</a>

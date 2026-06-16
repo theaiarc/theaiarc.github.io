@@ -1,36 +1,65 @@
 ---
 layout: default
 ---
+{%- comment -%} Resolve the primary "Get" action once, reused in header + sticky bar. {%- endcomment -%}
+{% assign primary_url = "" %}{% assign primary_label = "" %}{% assign primary_icon = "" %}{% assign primary_external = false %}
+{% if page.android and page.android.apk %}
+    {% assign primary_url = site.android_release_base | append: "/" | append: page.android.apk %}
+    {% assign primary_label = "Download APK" %}
+    {% if page.android.version %}{% assign primary_label = primary_label | append: " (v" | append: page.android.version | append: ")" %}{% endif %}
+    {% assign primary_icon = "fa-brands fa-android" %}
+{% elsif page.links and page.links.size > 0 %}
+    {% assign primary_url = page.links[0].url %}
+    {% assign primary_label = page.links[0].label %}
+    {% assign licon = page.links[0].icon | default: "fa-arrow-up-right-from-square" %}
+    {% assign primary_icon = "fa-solid " | append: licon %}
+    {% assign primary_external = true %}
+{% endif %}
+
 <article class="app-page">
     <section class="app-hero">
-        <div class="container app-hero-inner">
-            <div class="app-hero-text reveal">
-                <a class="back-link" href="/apps/"><i class="fa-solid fa-arrow-left"></i> All apps</a>
-                <div class="app-title-row">
-                    <span class="app-icon" style="background: {{ page.accent | default: '#3b5bdb' }}">
-                        <i class="fa-solid {{ page.icon | default: 'fa-rocket' }}"></i>
-                    </span>
-                    <div>
-                        <h1>{{ page.name | default: page.title }}</h1>
+        <div class="container">
+            <a class="back-link reveal" href="/apps/"><i class="fa-solid fa-arrow-left"></i> All apps</a>
+            <div class="store-detail-head reveal">
+                <span class="app-icon" style="background: {{ page.accent | default: '#3b5bdb' }}">
+                    <i class="fa-solid {{ page.icon | default: 'fa-rocket' }}"></i>
+                </span>
+                <div class="store-detail-headtext">
+                    <h1>{{ page.name | default: page.title }}</h1>
+                    <div class="store-detail-meta">
                         {% if page.status %}<span class="badge-status status-{{ page.status }}">{{ page.status | replace: '-', ' ' }}</span>{% endif %}
+                        <span>Free</span>
+                        <span class="sep">&middot;</span>
+                        <span>{% if page.android %}Android{% else %}Web app{% endif %}</span>
+                    </div>
+                    <p class="app-tagline">{{ page.tagline }}</p>
+                    <div class="store-detail-actions">
+                        {% if primary_url != "" %}
+                        <a class="btn-primary" href="{{ primary_url }}"{% if primary_external %} target="_blank" rel="noopener"{% endif %}><i class="{{ primary_icon }}"></i> {{ primary_label }}</a>
+                        {% elsif page.status == "coming-soon" %}
+                        <span class="btn-primary is-disabled"><i class="fa-solid fa-clock"></i> Coming soon</span>
+                        {% endif %}
+                        {% if page.links and page.links.size > 1 %}
+                            {% for l in page.links offset: 1 %}
+                            <a class="btn-ghost" href="{{ l.url }}" target="_blank" rel="noopener"><i class="fa-solid {{ l.icon | default: 'fa-arrow-up-right-from-square' }}"></i> {{ l.label }}</a>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
-                <p class="app-tagline">{{ page.tagline }}</p>
-                {% if page.links %}
-                <div class="app-links">
-                    {% for l in page.links %}
-                    <a class="btn-primary" href="{{ l.url }}" target="_blank" rel="noopener"><i class="fa-solid {{ l.icon | default: 'fa-arrow-up-right-from-square' }}"></i> {{ l.label }}</a>
-                    {% endfor %}
-                </div>
-                {% endif %}
             </div>
-            {% if page.screenshot %}
-            <div class="app-hero-shot reveal">
-                <img src="{{ page.screenshot }}" alt="{{ page.name }} screenshot" loading="lazy">
-            </div>
-            {% endif %}
         </div>
     </section>
+
+    {%- comment -%} Gallery: screenshots[] if present, else the single screenshot (backward compatible). {%- endcomment -%}
+    {% assign shots = page.screenshots %}
+    {% unless shots %}{% if page.screenshot %}{% assign shots = page.screenshot | split: "|" %}{% endif %}{% endunless %}
+    {% if shots %}
+    <section class="container app-gallery reveal">
+        <div class="gallery">
+            {% for s in shots %}<img src="{{ s }}" alt="{{ page.name }} screenshot {{ forloop.index }}" loading="lazy">{% endfor %}
+        </div>
+    </section>
+    {% endif %}
 
     {% if page.features %}
     <section class="container app-features">
@@ -71,6 +100,18 @@ layout: default
     </section>
     {% endif %}
 </article>
+
+{% if primary_url != "" %}
+<div class="store-get-bar">
+    <span class="store-get-name">{{ page.name | default: page.title }}</span>
+    <a class="btn-primary" href="{{ primary_url }}"{% if primary_external %} target="_blank" rel="noopener"{% endif %}><i class="{{ primary_icon }}"></i> {{ primary_label }}</a>
+</div>
+{% elsif page.status == "coming-soon" %}
+<div class="store-get-bar">
+    <span class="store-get-name">{{ page.name | default: page.title }}</span>
+    <span class="btn-primary is-disabled"><i class="fa-solid fa-clock"></i> Coming soon</span>
+</div>
+{% endif %}
 
 {% include cta.html %}
 

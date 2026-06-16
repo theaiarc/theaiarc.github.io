@@ -1,0 +1,18 @@
+{%- comment -%}
+Shared app card. Usage: {% include app-card.html app=app %}
+Renders honest fields only (status badge, tagline). data-* hooks power store.js search/filter.
+{%- endcomment -%}
+<a class="app-card reveal" href="{{ include.app.url }}"
+   data-type="app"
+   data-name="{{ include.app.name | default: include.app.title | downcase }}"
+   data-tags="{{ include.app.tagline | downcase }}"
+   data-status="{{ include.app.status }}"
+   data-category="{{ include.app.category | default: 'app' | downcase }}">
+    <span class="app-icon" style="background: {{ include.app.accent | default: '#3b5bdb' }}">
+        <i class="fa-solid {{ include.app.icon | default: 'fa-rocket' }}"></i>
+    </span>
+    <div class="app-card-body">
+        <h3>{{ include.app.name | default: include.app.title }}{% if include.app.status %} <span class="badge-status status-{{ include.app.status }}">{{ include.app.status | replace: '-', ' ' }}</span>{% endif %}</h3>
+        <p>{{ include.app.tagline }}</p>
+    </div>
+</a>

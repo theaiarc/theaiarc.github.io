@@ -7,75 +7,89 @@ description: >-
   beauty, travel, and more.
 ---
 
-<section class="hero">
-    <div class="container" style="text-align:center">
-        <p class="hero-eyebrow reveal">Free App Solutions</p>
-        <h1 class="hero-title reveal" style="max-width:840px;margin:0 auto">Free apps &amp; ready-to-use website templates.</h1>
-        <p class="hero-sub reveal" style="margin:1.1rem auto 1.7rem">Download free Android apps, and launch faster with clean, responsive website templates across many domains — fully customizable and ready to deploy.</p>
-        <div class="hero-actions reveal" style="justify-content:center">
-            <a class="btn-primary" href="/templates/"><i class="fa-solid fa-layer-group"></i> Browse templates</a>
-            <a class="btn-ghost" href="/apps/"><i class="fa-solid fa-rocket"></i> Explore apps</a>
-        </div>
-    </div>
-</section>
+{% assign apps = site.apps | sort: "order" %}
+{% assign tpls = site.templates | sort: "order" %}
 
-<section class="section section-alt" style="padding-top:clamp(2.5rem,6vw,4rem)">
-    <div class="container">
-        <div class="section-head reveal">
-            <h2 class="section-title">Apps</h2>
-            <p class="section-sub">Tools and products you can download and use today.</p>
-        </div>
-        {% assign apps = site.apps | sort: "order" %}
-        <div class="card-grid">
-            {% for app in apps %}
-            <a class="app-card reveal" href="{{ app.url }}">
-                <span class="app-icon" style="background: {{ app.accent | default: '#3b5bdb' }}"><i class="fa-solid {{ app.icon | default: 'fa-rocket' }}"></i></span>
-                <div class="app-card-body">
-                    <h3>{{ app.name | default: app.title }}{% if app.status %} <span class="badge-status status-{{ app.status }}">{{ app.status | replace: '-', ' ' }}</span>{% endif %}</h3>
-                    <p>{{ app.tagline }}</p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-        <div class="section-foot reveal"><a class="link-arrow" href="/apps/">All apps <i class="fa-solid fa-arrow-right"></i></a></div>
+<section class="hero">
+    <div class="container" style="text-align:center">       
+        <h1 class="hero-title reveal" style="max-width:760px;margin:0 auto 1.4rem">Discover free apps &amp; ready-to-use templates.</h1>        
+        {% include featured-banner.html %}
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <div class="section-head reveal">
-            <h2 class="section-title">Website Templates</h2>
-            <p class="section-sub">Polished, responsive templates for every kind of business.</p>
+        <div class="shelf">
+            <div class="shelf-head reveal">
+                <h2>Apps</h2>
+                <a class="link-arrow" href="/apps/">All apps <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="shelf-track">
+                {% for app in apps %}{% include app-card.html app=app %}{% endfor %}
+            </div>
+            <button type="button" class="shelf-btn shelf-btn-prev" aria-label="Scroll apps left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="shelf-btn shelf-btn-next" aria-label="Scroll apps right"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
-        {% assign tpls = site.templates | sort: "order" %}
-        <div class="card-grid tpl-grid">
-            {% for t in tpls %}
-            {% assign href = t.url %}{% assign isdemo = false %}
-            {% if t.demo_url and t.demo_url != "#" %}{% assign href = t.demo_url %}{% assign isdemo = true %}{% endif %}
-            <a class="tpl-card reveal" href="{{ href }}"{% if isdemo %} target="_blank" rel="noopener"{% endif %}>
-                <div class="tpl-thumb"><img src="{{ t.image }}" alt="{{ t.name | default: t.title }}" loading="lazy"></div>
-                <div class="tpl-card-body">
-                    {% if t.domain %}<span class="tpl-domain-badge">{{ t.domain }}</span>{% endif %}
-                    <h3>{{ t.name | default: t.title }}</h3>
-                    <p>{{ t.tagline }}</p>
-                    <div class="tpl-card-foot">
-                        {% if t.price %}<span class="tpl-price-sm">{{ t.price }}</span>{% endif %}
-                        <span class="link-arrow">{% if isdemo %}View template <i class="fa-solid fa-arrow-up-right-from-square"></i>{% else %}View <i class="fa-solid fa-arrow-right"></i>{% endif %}</span>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-        <div class="section-foot reveal"><a class="link-arrow" href="/templates/">All templates <i class="fa-solid fa-arrow-right"></i></a></div>
     </div>
 </section>
 
-<section class="cta-band reveal">
-    <div class="container cta-inner">
-        <h2>Get the apps on your phone</h2>
-        <p>Download the Android APKs directly, or scan the QR code.</p>
-        <div class="cta-actions">
-            <a class="btn-primary" href="/download/"><i class="fa-brands fa-android"></i> Download apps</a>
+<section class="section section-alt">
+    <div class="container">
+        <div class="shelf">
+            <div class="shelf-head reveal">
+                <h2>Website Templates</h2>
+                <a class="link-arrow" href="/templates/">All templates <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="shelf-track">
+                {% for t in tpls %}{% include tpl-card.html t=t %}{% endfor %}
+            </div>
+            <button type="button" class="shelf-btn shelf-btn-prev" aria-label="Scroll templates left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="shelf-btn shelf-btn-next" aria-label="Scroll templates right"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
 </section>
+
+<section class="section">
+    <div class="container">
+        <div class="shelf-head reveal">
+            <h2>Top charts</h2>
+            <span class="section-sub" style="margin:0">Handpicked picks across apps &amp; templates</span>
+        </div>
+        {% assign ranked = apps | concat: tpls | sort: "order" %}
+        <div class="topchart-list">
+            {% for item in ranked limit: 8 %}
+            {% if item.collection == "apps" %}
+            <a class="topchart-row reveal" href="{{ item.url }}"
+               data-type="app"
+               data-name="{{ item.name | default: item.title | downcase }}"
+               data-tags="{{ item.tagline | downcase }}"
+               data-status="{{ item.status }}"
+               data-category="{{ item.category | default: 'app' | downcase }}">
+                <span class="topchart-rank">{{ forloop.index }}</span>
+                <span class="app-icon" style="background: {{ item.accent | default: '#3b5bdb' }}"><i class="fa-solid {{ item.icon | default: 'fa-rocket' }}"></i></span>
+                <span class="topchart-body">
+                    <h3>{{ item.name | default: item.title }}</h3>
+                    <span>{% if item.status %}{{ item.status | replace: '-', ' ' }}{% else %}App{% endif %}</span>
+                </span>
+            </a>
+            {% else %}
+            {% assign rhref = item.url %}{% if item.demo_url and item.demo_url != "#" %}{% assign rhref = item.demo_url %}{% endif %}
+            <a class="topchart-row reveal" href="{{ rhref }}"{% if item.demo_url and item.demo_url != "#" %} target="_blank" rel="noopener"{% endif %}
+               data-type="template"
+               data-name="{{ item.name | default: item.title | downcase }}"
+               data-tags="{{ item.tagline | downcase }}"
+               data-category="{{ item.domain | default: 'template' | downcase }}">
+                <span class="topchart-rank">{{ forloop.index }}</span>
+                <span class="topchart-thumb"><img src="{{ item.image }}" alt="" loading="lazy"></span>
+                <span class="topchart-body">
+                    <h3>{{ item.name | default: item.title }}</h3>
+                    <span>{{ item.domain | default: 'Template' }}{% if item.price %} &middot; {{ item.price }}{% endif %}</span>
+                </span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

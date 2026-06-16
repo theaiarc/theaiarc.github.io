@@ -1,0 +1,51 @@
+{%- comment -%}
+Featured banner / carousel. Slides come from `featured: true` items (apps first, then templates).
+Image: screenshot (apps) / image (templates); else gradient from accent + icon fallback.
+store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
+{%- endcomment -%}
+{% assign feat_apps = site.apps | where: "featured", true | sort: "order" %}
+{% assign feat_tpls = site.templates | where: "featured", true | sort: "order" %}
+{% assign slides = feat_apps | concat: feat_tpls %}
+{% if slides.size > 0 %}
+<section class="featured-banner reveal" data-carousel aria-roledescription="carousel" aria-label="Featured">
+    <div class="featured-track">
+        {% for a in feat_apps limit: 5 %}
+        <a class="featured-slide{% if forloop.first %} is-active{% endif %}" href="{{ a.url }}" aria-label="{{ a.name | default: a.title }}">
+            {% assign art = a.featured_image | default: a.screenshot %}
+            {% if art %}
+            <img class="featured-bg" src="{{ art }}" alt="" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+            {% else %}
+            <span class="featured-fallback" style="background: linear-gradient(135deg, {{ a.accent | default: '#3b5bdb' }}, #2f3b9e)"><i class="fa-solid {{ a.icon | default: 'fa-rocket' }}"></i></span>
+            {% endif %}
+            <div class="featured-overlay">
+                <span class="featured-kicker">Featured app</span>
+                <h3>{{ a.name | default: a.title }}</h3>
+                <p>{{ a.tagline }}</p>
+                <span class="featured-meta">{% if a.status %}<span class="badge-status status-{{ a.status }}">{{ a.status | replace: '-', ' ' }}</span>{% endif %}<span class="featured-cta">View <i class="fa-solid fa-arrow-right"></i></span></span>
+            </div>
+        </a>
+        {% endfor %}
+        {% assign app_count = feat_apps.size %}
+        {% assign tpl_limit = 5 | minus: app_count %}
+        {% if tpl_limit > 0 %}
+        {% for t in feat_tpls limit: tpl_limit %}
+        <a class="featured-slide" href="{% if t.demo_url and t.demo_url != '#' %}{{ t.demo_url }}{% else %}{{ t.url }}{% endif %}"{% if t.demo_url and t.demo_url != '#' %} target="_blank" rel="noopener"{% endif %} aria-label="{{ t.name | default: t.title }}">
+            {% assign art = t.featured_image | default: t.image %}
+            {% if art %}
+            <img class="featured-bg" src="{{ art }}" alt="" loading="lazy">
+            {% else %}
+            <span class="featured-fallback" style="background: linear-gradient(135deg, #3b5bdb, #2f3b9e)"><i class="fa-solid fa-layer-group"></i></span>
+            {% endif %}
+            <div class="featured-overlay">
+                <span class="featured-kicker">Featured template</span>
+                <h3>{{ t.name | default: t.title }}</h3>
+                <p>{{ t.tagline }}</p>
+                <span class="featured-meta">{% if t.domain %}<span class="tpl-domain-badge">{{ t.domain }}</span>{% endif %}<span class="featured-cta">View <i class="fa-solid fa-arrow-right"></i></span></span>
+            </div>
+        </a>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="featured-dots" data-carousel-dots aria-hidden="true"></div>
+</section>
+{% endif %}
