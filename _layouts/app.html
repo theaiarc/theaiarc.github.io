@@ -81,7 +81,20 @@ layout: default
   "name": {{ page.name | default: page.title | jsonify }},
   "description": {{ page.tagline | jsonify }},
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "author": { "@type": "Person", "name": "Hemant Patkar" }
+  "operatingSystem": {% if page.android %}"Android"{% else %}"Web"{% endif %},
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Hemant Patkar" },
+  "publisher": { "@type": "Organization", "name": "Free App Solutions" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Apps", "item": "{{ site.url }}/apps/" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.name | default: page.title | jsonify }} }
+  ]
 }
 </script>

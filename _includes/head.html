@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
     <link href="/css/all.css" rel="stylesheet">
     <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/img/icon.svg">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,4 +28,20 @@
     <link rel="stylesheet" type="text/css" href="/css/Custom.css">
 
     {% feed_meta %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Free App Solutions",
+      "url": "{{ site.url }}",
+      "logo": "{{ site.url }}/assets/img/icon.svg",
+      "description": {{ site.description | strip_newlines | jsonify }},
+      "sameAs": [
+        "https://github.com/theaiarc",
+        "https://github.com/hemantpatkar",
+        "https://hemantpatkar.github.io"
+      ]
+    }
+    </script>
 </head>
