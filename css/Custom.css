@@ -599,6 +599,8 @@ main {
     width: 34px;
     height: 34px;
     border-radius: 9px;
+    overflow: hidden;
+    object-fit: cover;
     background: var(--accent);
     color: #fff;
     font-weight: 800;
