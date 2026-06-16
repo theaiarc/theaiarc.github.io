@@ -1,0 +1,61 @@
+title: Free App Solutions
+tagline: Free apps & ready-to-use website templates
+description: >-
+  Free App Solutions — download free Android apps and get clean, customizable
+  website & web-app templates across many domains.
+url: "https://freeappsolutions.com"
+baseurl: ""
+github_username: theaiarc
+lang: en
+
+encoding: UTF-8
+
+# Android APK downloads are hosted as GitHub Release assets in this repo.
+android_release_base: "https://github.com/theaiarc/Android/releases/latest/download"
+
+author:
+  name: Hemant Patkar
+logo: /assets/img/icon.svg
+social:
+  name: Free App Solutions
+  links:
+    - https://github.com/theaiarc
+    - https://github.com/hemantpatkar
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-image.png
+  - scope:
+      path: ""
+      type: apps
+    values:
+      layout: app
+  - scope:
+      path: ""
+      type: templates
+    values:
+      layout: template
+
+collections:
+  apps:
+    output: true
+    permalink: /apps/:path/
+  templates:
+    output: true
+    permalink: /templates/:path/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - .buildtest
+  - vendor
+  - .vs

@@ -1,0 +1,15 @@
+{
+  "name": "Free App Solutions",
+  "short_name": "FreeAppSolutions",
+  "description": "Free Android apps and ready-to-use website templates.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#3b5bdb",
+  "icons": [
+    { "src": "/assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

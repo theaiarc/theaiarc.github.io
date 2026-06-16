@@ -1,0 +1,81 @@
+---
+layout: default
+title: Free Apps & Website Templates
+description: >-
+  Free App Solutions — download free Android apps and get clean, customizable
+  website & web-app templates for real estate, healthcare, e-commerce, fashion,
+  beauty, travel, and more.
+---
+
+<section class="hero">
+    <div class="container" style="text-align:center">
+        <p class="hero-eyebrow reveal">Free App Solutions</p>
+        <h1 class="hero-title reveal" style="max-width:840px;margin:0 auto">Free apps &amp; ready-to-use website templates.</h1>
+        <p class="hero-sub reveal" style="margin:1.1rem auto 1.7rem">Download free Android apps, and launch faster with clean, responsive website templates across many domains — fully customizable and ready to deploy.</p>
+        <div class="hero-actions reveal" style="justify-content:center">
+            <a class="btn-primary" href="/templates/"><i class="fa-solid fa-layer-group"></i> Browse templates</a>
+            <a class="btn-ghost" href="/apps/"><i class="fa-solid fa-rocket"></i> Explore apps</a>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" style="padding-top:clamp(2.5rem,6vw,4rem)">
+    <div class="container">
+        <div class="section-head reveal">
+            <h2 class="section-title">Apps</h2>
+            <p class="section-sub">Tools and products you can download and use today.</p>
+        </div>
+        {% assign apps = site.apps | sort: "order" %}
+        <div class="card-grid">
+            {% for app in apps %}
+            <a class="app-card reveal" href="{{ app.url }}">
+                <span class="app-icon" style="background: {{ app.accent | default: '#3b5bdb' }}"><i class="fa-solid {{ app.icon | default: 'fa-rocket' }}"></i></span>
+                <div class="app-card-body">
+                    <h3>{{ app.name | default: app.title }}{% if app.status %} <span class="badge-status status-{{ app.status }}">{{ app.status | replace: '-', ' ' }}</span>{% endif %}</h3>
+                    <p>{{ app.tagline }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="section-foot reveal"><a class="link-arrow" href="/apps/">All apps <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <h2 class="section-title">Website Templates</h2>
+            <p class="section-sub">Polished, responsive templates for every kind of business.</p>
+        </div>
+        {% assign tpls = site.templates | sort: "order" %}
+        <div class="card-grid tpl-grid">
+            {% for t in tpls %}
+            {% assign href = t.url %}{% assign isdemo = false %}
+            {% if t.demo_url and t.demo_url != "#" %}{% assign href = t.demo_url %}{% assign isdemo = true %}{% endif %}
+            <a class="tpl-card reveal" href="{{ href }}"{% if isdemo %} target="_blank" rel="noopener"{% endif %}>
+                <div class="tpl-thumb"><img src="{{ t.image }}" alt="{{ t.name | default: t.title }}" loading="lazy"></div>
+                <div class="tpl-card-body">
+                    {% if t.domain %}<span class="tpl-domain-badge">{{ t.domain }}</span>{% endif %}
+                    <h3>{{ t.name | default: t.title }}</h3>
+                    <p>{{ t.tagline }}</p>
+                    <div class="tpl-card-foot">
+                        {% if t.price %}<span class="tpl-price-sm">{{ t.price }}</span>{% endif %}
+                        <span class="link-arrow">{% if isdemo %}View template <i class="fa-solid fa-arrow-up-right-from-square"></i>{% else %}View <i class="fa-solid fa-arrow-right"></i>{% endif %}</span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="section-foot reveal"><a class="link-arrow" href="/templates/">All templates <i class="fa-solid fa-arrow-right"></i></a></div>
+    </div>
+</section>
+
+<section class="cta-band reveal">
+    <div class="container cta-inner">
+        <h2>Get the apps on your phone</h2>
+        <p>Download the Android APKs directly, or scan the QR code.</p>
+        <div class="cta-actions">
+            <a class="btn-primary" href="/download/"><i class="fa-brands fa-android"></i> Download apps</a>
+        </div>
+    </div>
+</section>

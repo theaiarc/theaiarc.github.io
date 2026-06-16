@@ -427,3 +427,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Local build tooling
+.buildtest/
+node_modules/
+_site/
+.jekyll-cache/
+Gemfile.lock

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+{% include head.html %}
+
+<body>
+    {% include nav.html %}
+
+    <main id="main">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
