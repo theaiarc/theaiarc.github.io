@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: { colors: {
-      brand: { DEFAULT: '#a855f7', dark: '#7c3aed', light: '#c084fc' }, cyber: '#22d3ee', ink: '#0a0a12',
+      brand: { DEFAULT: 'rgb(var(--brand) / <alpha-value>)', dark: 'rgb(var(--brand-dark) / <alpha-value>)', light: 'rgb(var(--brand-light) / <alpha-value>)' }, cyber: 'rgb(var(--cyber) / <alpha-value>)', ink: 'rgb(var(--ink) / <alpha-value>)',
     } } } };
   </script>
 
@@ -107,7 +107,7 @@
   </section>
 
   <!-- ===== Café menu ===== -->
-  <section class="py-20 bg-gradient-to-b from-ink to-[#11091f]">
+  <section class="py-20 bg-surface-grad">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12 reveal">
         <p class="text-cyber font-semibold uppercase tracking-widest">The Café</p>

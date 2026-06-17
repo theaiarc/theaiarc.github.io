@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navbar) {
     const onScroll = () => {
       if (window.scrollY > 40) {
-        navbar.classList.add('bg-[#0a0a12]/90', 'shadow-lg', 'backdrop-blur', 'border-b', 'border-white/10');
+        navbar.classList.add('bg-ink/90', 'shadow-lg', 'backdrop-blur', 'border-b', 'border-white/10');
         navbar.classList.remove('bg-transparent');
       } else if (navbar.dataset.transparent === 'true') {
-        navbar.classList.remove('bg-[#0a0a12]/90', 'shadow-lg', 'backdrop-blur', 'border-b', 'border-white/10');
+        navbar.classList.remove('bg-ink/90', 'shadow-lg', 'backdrop-blur', 'border-b', 'border-white/10');
         navbar.classList.add('bg-transparent');
       }
     };

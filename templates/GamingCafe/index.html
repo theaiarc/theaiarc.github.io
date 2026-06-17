@@ -1,286 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXUS — Gaming Lounge &amp; Esports Café</title>
-  <meta name="description" content="NEXUS Gaming Lounge — high-end PCs, console bays, racing rigs, and a full café. Play, compete, and belong. Book your station today." />
-
-  <!-- Tailwind CSS (Play CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#a855f7', dark: '#7c3aed', light: '#c084fc' },
-            cyber: '#22d3ee',
-            ink: '#0a0a12',
-          },
-        },
-      },
-    };
-  </script>
-
-  <!-- Fonts & icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS — Gaming Café &amp; Esports Lounge Templates</title>
+    <meta name="description" content="Choose a theme — NEXUS gaming-café / esports-lounge website templates by Hemant Patkar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root { --ink:#0a0a12; --muted:#94a3b8; --line:rgba(255,255,255,.1); }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:"Inter",system-ui,sans-serif; background:var(--ink); color:#e2e8f0; }
+        h1,h2,h3,.brand { font-family:"Orbitron",sans-serif; letter-spacing:-.01em; }
+        a { text-decoration:none; color:inherit; }
+        .wrap { max-width:1100px; margin:0 auto; padding:0 22px; }
+        header { border-bottom:1px solid var(--line); background:rgba(10,10,18,.85); backdrop-filter:blur(8px); position:sticky; top:0; z-index:10; }
+        .nav { display:flex; align-items:center; justify-content:space-between; height:68px; }
+        .brand { font-weight:800; font-size:1.25rem; display:flex; align-items:center; gap:.5rem; color:#fff; }
+        .brand .mark { color:#a855f7; font-size:1.6rem; }
+        .grad { background:linear-gradient(90deg,#a855f7,#22d3ee); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .back { color:var(--muted); font-weight:600; font-size:.9rem; }
+        .back:hover { color:#22d3ee; }
+        .intro { text-align:center; max-width:640px; margin:64px auto 44px; padding:0 22px; }
+        .eyebrow { color:#22d3ee; font-weight:700; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; }
+        .intro h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; margin:.6rem 0; color:#fff; }
+        .intro p { color:var(--muted); font-size:1.05rem; }
+        .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; padding-bottom:80px; }
+        .theme { background:rgba(255,255,255,.04); border:1px solid var(--line); border-radius:18px; overflow:hidden; transition:.25s; display:block; }
+        .theme:hover { transform:translateY(-6px); box-shadow:0 22px 50px rgba(0,0,0,.5); }
+        .thumb { aspect-ratio:16/11; position:relative; display:grid; place-items:center; overflow:hidden; }
+        .thumb .pad { font-size:3.4rem; color:#fff; filter:drop-shadow(0 6px 18px rgba(0,0,0,.45)); z-index:1; }
+        .thumb::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px); background-size:26px 26px; }
+        .thumb .chip { position:absolute; bottom:14px; left:14px; z-index:1; display:flex; gap:6px; }
+        .thumb .chip span { width:26px; height:8px; border-radius:4px; }
+        .t-neon { background:radial-gradient(120% 90% at 50% 0%,rgba(168,85,247,.55),transparent 60%),#120a22; }
+        .t-toxic { background:radial-gradient(120% 90% at 50% 0%,rgba(132,204,22,.5),transparent 60%),#0a120a; }
+        .t-inferno { background:radial-gradient(120% 90% at 50% 0%,rgba(249,115,22,.55),transparent 60%),#1a0a0a; }
+        .t-arctic { background:radial-gradient(120% 90% at 50% 0%,rgba(56,189,248,.5),transparent 60%),#08111f; }
+        .meta { padding:20px 22px; }
+        .meta h3 { font-size:1.25rem; color:#fff; }
+        .meta p { color:var(--muted); font-size:.9rem; margin:.3rem 0 .9rem; }
+        .link { color:#22d3ee; font-weight:700; font-size:.9rem; }
+        .theme:hover .link { text-decoration:underline; }
+        .note { text-align:center; color:var(--muted); font-size:.85rem; max-width:680px; margin:0 auto 60px; padding:0 22px; }
+        footer { border-top:1px solid var(--line); padding:26px 0; text-align:center; color:var(--muted); font-size:.85rem; }
+        @media(max-width:980px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+        @media(max-width:560px){ .grid{ grid-template-columns:1fr; } }
+    </style>
 </head>
-<body class="bg-ink text-slate-200 antialiased">
-
-  <!-- ===== Navbar ===== -->
-  <header id="navbar" data-transparent="true" class="fixed top-0 inset-x-0 z-50 bg-transparent transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20">
-      <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white">
-        <i class="ri-gamepad-line text-brand text-3xl"></i>
-        NE<span class="text-gradient">XUS</span>
-      </a>
-      <ul class="hidden md:flex items-center gap-8 text-slate-300 font-medium">
-        <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
-        <li><a href="pricing.html" class="hover:text-cyber transition">Pricing</a></li>
-        <li><a href="events.html" class="hover:text-cyber transition">Events</a></li>
-        <li><a href="about.html" class="hover:text-cyber transition">About</a></li>
-      </ul>
-      <a href="pricing.html#book" class="hidden md:inline-flex items-center gap-2 btn-grad text-ink px-5 py-2.5 rounded-full font-bold transition">
-        Book a Station <i class="ri-arrow-right-line"></i>
-      </a>
-      <button id="menu-btn" class="md:hidden text-white text-3xl" aria-label="Toggle menu">
-        <i class="ri-menu-line"></i>
-      </button>
-    </nav>
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-ink/95 backdrop-blur px-5 pb-6 border-b border-white/10">
-      <ul class="flex flex-col gap-4 text-white font-medium pt-2">
-        <li><a href="index.html" class="block py-2 hover:text-cyber">Home</a></li>
-        <li><a href="pricing.html" class="block py-2 hover:text-cyber">Pricing</a></li>
-        <li><a href="events.html" class="block py-2 hover:text-cyber">Events</a></li>
-        <li><a href="about.html" class="block py-2 hover:text-cyber">About</a></li>
-        <li><a href="pricing.html#book" class="block mt-2 btn-grad text-ink text-center py-2.5 rounded-full font-bold">Book a Station</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- ===== Hero ===== -->
-  <section class="relative h-screen min-h-[640px] flex items-center justify-center text-center grid-bg">
-    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=80"
-         alt="Gaming setup with neon lighting" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 hero-overlay"></div>
-    <div class="relative z-10 max-w-3xl px-5">
-      <p class="text-cyber font-semibold tracking-[0.3em] uppercase mb-4 reveal">Play • Compete • Belong</p>
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight reveal text-glow">
-        Where <span class="text-gradient">Legends</span> Respawn
-      </h1>
-      <p class="text-lg text-slate-300 mt-6 reveal">
-        RTX-powered battlestations, next-gen consoles, racing sims, and a loaded café — all under one neon roof. Drop in solo or squad up.
-      </p>
-      <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center reveal">
-        <a href="pricing.html#book" class="btn-grad text-ink px-8 py-4 rounded-full font-bold text-lg transition inline-flex items-center justify-center gap-2">
-          Book a Station <i class="ri-flashlight-line"></i>
-        </a>
-        <a href="events.html" class="bg-white/5 hover:bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg backdrop-blur transition">
-          Upcoming Tournaments
-        </a>
-      </div>
-      <div class="mt-8 inline-flex items-center gap-2 text-sm text-slate-300 reveal">
-        <span class="w-2.5 h-2.5 rounded-full bg-cyber pulse-dot"></span>
-        Open now · 12 of 40 stations available
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Stats ===== -->
-  <section class="border-y border-white/10 bg-ink py-14">
-    <div class="max-w-6xl mx-auto px-5 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="reveal"><p class="text-4xl font-extrabold display text-gradient">40+</p><p class="text-slate-400 mt-1">Battlestations</p></div>
-      <div class="reveal"><p class="text-4xl font-extrabold display text-gradient">240Hz</p><p class="text-slate-400 mt-1">Display Refresh</p></div>
-      <div class="reveal"><p class="text-4xl font-extrabold display text-gradient">1Gbps</p><p class="text-slate-400 mt-1">Fiber Internet</p></div>
-      <div class="reveal"><p class="text-4xl font-extrabold display text-gradient">24/7</p><p class="text-slate-400 mt-1">Always Open</p></div>
-    </div>
-  </section>
-
-  <!-- ===== Setups / Zones ===== -->
-  <section class="py-20 bg-ink">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-        <p class="text-cyber font-semibold uppercase tracking-widest">Pick Your Arena</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Built for Every Player</h2>
-        <p class="text-slate-400 mt-4">From ranked grinds to couch co-op — every zone is dialed in and ready to go.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- PC -->
-        <article class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
-          <div class="img-zoom-wrap relative overflow-hidden h-56">
-            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=80" alt="Gaming PC zone" class="img-zoom w-full h-full object-cover" />
-            <span class="absolute top-4 left-4 bg-brand text-ink text-xs font-bold px-3 py-1 rounded-full">Most Popular</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">PC Battlestations</h3>
-            <p class="text-slate-400 text-sm mb-4">RTX 4080 rigs, 240Hz monitors, mechanical keys, and pro-grade headsets.</p>
-            <ul class="text-sm text-slate-300 space-y-1.5">
-              <li><i class="ri-cpu-line text-cyber"></i> Intel i9 · 32GB DDR5</li>
-              <li><i class="ri-mouse-line text-cyber"></i> Logitech G Pro gear</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Console -->
-        <article class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
-          <div class="img-zoom-wrap relative overflow-hidden h-56">
-            <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=800&q=80" alt="Console gaming zone" class="img-zoom w-full h-full object-cover" />
-            <span class="absolute top-4 left-4 bg-cyber text-ink text-xs font-bold px-3 py-1 rounded-full">Squad Up</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Console Lounges</h3>
-            <p class="text-slate-400 text-sm mb-4">PS5 &amp; Xbox Series X on 65" 4K OLEDs with comfy couch seating.</p>
-            <ul class="text-sm text-slate-300 space-y-1.5">
-              <li><i class="ri-tv-2-line text-cyber"></i> 65" 4K 120Hz OLED</li>
-              <li><i class="ri-team-line text-cyber"></i> Up to 4 players</li>
-            </ul>
-          </div>
-        </article>
-        <!-- Sim -->
-        <article class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
-          <div class="img-zoom-wrap relative overflow-hidden h-56">
-            <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=800&q=80" alt="Racing simulator rig" class="img-zoom w-full h-full object-cover" />
-            <span class="absolute top-4 left-4 bg-brand-light text-ink text-xs font-bold px-3 py-1 rounded-full">Adrenaline</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">Sim Racing Rigs</h3>
-            <p class="text-slate-400 text-sm mb-4">Full-motion cockpits with force-feedback wheels and triple displays.</p>
-            <ul class="text-sm text-slate-300 space-y-1.5">
-              <li><i class="ri-steering-2-line text-cyber"></i> Direct-drive wheels</li>
-              <li><i class="ri-vidicon-line text-cyber"></i> Triple 49" curved</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Pricing teaser ===== -->
-  <section class="py-20 bg-gradient-to-b from-ink to-[#11091f]">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-        <p class="text-cyber font-semibold uppercase tracking-widest">Simple Rates</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Play More, Pay Less</h2>
-        <p class="text-slate-400 mt-4">Pay by the hour or go all-in with a membership. No hidden fees.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center card-lift reveal">
-          <p class="text-slate-400 font-semibold uppercase text-sm">Hourly</p>
-          <p class="text-4xl font-black display text-white mt-3">$6<span class="text-base text-slate-400 font-normal">/hr</span></p>
-          <p class="text-slate-400 text-sm mt-3">Walk in, game on. Any open station.</p>
+<body>
+    <header>
+        <div class="wrap nav">
+            <span class="brand"><i class="ri-gamepad-line mark"></i> NE<span class="grad">XUS</span></span>
+            <a class="back" href="/templates/">← All templates</a>
         </div>
-        <div class="bg-gradient-to-b from-brand/20 to-transparent border border-brand/60 rounded-2xl p-8 text-center glow reveal relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyber text-ink text-xs font-bold px-3 py-1 rounded-full">Best Value</span>
-          <p class="text-cyber font-semibold uppercase text-sm">Day Pass</p>
-          <p class="text-4xl font-black display text-white mt-3">$29<span class="text-base text-slate-400 font-normal">/day</span></p>
-          <p class="text-slate-400 text-sm mt-3">Unlimited play, open to close.</p>
+    </header>
+
+    <div class="intro">
+        <span class="eyebrow">Gaming &amp; Esports</span>
+        <h1>NEXUS Gaming Templates</h1>
+        <p>One full multi-page gaming-café site — home, pricing, tournaments, about &amp; contact — in three neon color themes. Pick one to open the live demo.</p>
+    </div>
+
+    <div class="wrap">
+        <div class="grid">
+            <a class="theme" href="template-neon/" target="_blank" rel="noopener">
+                <div class="thumb t-neon">
+                    <i class="ri-gamepad-line pad"></i>
+                    <span class="chip"><span style="background:#a855f7"></span><span style="background:#22d3ee"></span></span>
+                </div>
+                <div class="meta"><h3>Neon</h3><p>Purple &amp; cyan — the classic esports glow.</p><span class="link">Live preview →</span></div>
+            </a>
+            <a class="theme" href="template-toxic/" target="_blank" rel="noopener">
+                <div class="thumb t-toxic">
+                    <i class="ri-gamepad-line pad"></i>
+                    <span class="chip"><span style="background:#84cc16"></span><span style="background:#2dd4bf"></span></span>
+                </div>
+                <div class="meta"><h3>Toxic</h3><p>Acid lime &amp; teal — loud and competitive.</p><span class="link">Live preview →</span></div>
+            </a>
+            <a class="theme" href="template-inferno/" target="_blank" rel="noopener">
+                <div class="thumb t-inferno">
+                    <i class="ri-gamepad-line pad"></i>
+                    <span class="chip"><span style="background:#f97316"></span><span style="background:#f43f5e"></span></span>
+                </div>
+                <div class="meta"><h3>Inferno</h3><p>Orange &amp; magenta — hot, aggressive FPS energy.</p><span class="link">Live preview →</span></div>
+            </a>
+            <a class="theme" href="template-arctic/" target="_blank" rel="noopener">
+                <div class="thumb t-arctic">
+                    <i class="ri-gamepad-line pad"></i>
+                    <span class="chip"><span style="background:#38bdf8"></span><span style="background:#a5f3fc"></span></span>
+                </div>
+                <div class="meta"><h3>Arctic</h3><p>Icy sky-blue &amp; frost — clean and cool.</p><span class="link">Live preview →</span></div>
+            </a>
         </div>
-        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center card-lift reveal">
-          <p class="text-slate-400 font-semibold uppercase text-sm">Member</p>
-          <p class="text-4xl font-black display text-white mt-3">$49<span class="text-base text-slate-400 font-normal">/mo</span></p>
-          <p class="text-slate-400 text-sm mt-3">20% off all rates + free events.</p>
-        </div>
-      </div>
-      <div class="text-center mt-12 reveal">
-        <a href="pricing.html" class="inline-flex items-center gap-2 btn-grad text-ink px-8 py-3.5 rounded-full font-bold transition">
-          See Full Pricing <i class="ri-arrow-right-line"></i>
-        </a>
-      </div>
+        <p class="note">All three themes share the same content and layout — only the color palette changes. Each is a standalone static site (HTML + Tailwind CDN). See <code>README.md</code> and <code>CREDITS.md</code> for setup, licensing, and a pre-launch checklist.</p>
     </div>
-  </section>
 
-  <!-- ===== Why Us ===== -->
-  <section class="py-20 bg-ink">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
-      <div class="img-zoom-wrap rounded-3xl overflow-hidden border border-white/10 reveal">
-        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=80" alt="Esports players" class="img-zoom w-full h-[480px] object-cover" />
-      </div>
-      <div class="reveal">
-        <p class="text-cyber font-semibold uppercase tracking-widest">Why NEXUS</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6 text-white">More Than a Gaming Café</h2>
-        <p class="text-slate-400 mb-8">We built the spot we always wanted to play at — top-tier gear, zero lag, a community that hypes you up, and snacks that never run out.</p>
-        <ul class="space-y-6">
-          <li class="flex gap-4">
-            <div class="shrink-0 w-12 h-12 rounded-xl bg-brand/15 text-brand-light flex items-center justify-center text-2xl"><i class="ri-rocket-2-line"></i></div>
-            <div><h4 class="font-bold text-lg text-white">Zero-Lag Hardware</h4><p class="text-slate-400">Top-shelf rigs on 1Gbps fiber, refreshed every season.</p></div>
-          </li>
-          <li class="flex gap-4">
-            <div class="shrink-0 w-12 h-12 rounded-xl bg-cyber/15 text-cyber flex items-center justify-center text-2xl"><i class="ri-trophy-line"></i></div>
-            <div><h4 class="font-bold text-lg text-white">Weekly Tournaments</h4><p class="text-slate-400">Valorant, FIFA, Tekken &amp; more — with real prize pools.</p></div>
-          </li>
-          <li class="flex gap-4">
-            <div class="shrink-0 w-12 h-12 rounded-xl bg-brand/15 text-brand-light flex items-center justify-center text-2xl"><i class="ri-cup-line"></i></div>
-            <div><h4 class="font-bold text-lg text-white">Loaded Café</h4><p class="text-slate-400">Energy drinks, loaded fries, and bottomless coffee at your seat.</p></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="relative py-24 grid-bg">
-    <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=2000&q=80" alt="Neon gaming arena" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-ink/85"></div>
-    <div class="relative z-10 max-w-3xl mx-auto text-center px-5 reveal">
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white text-glow">Your Squad Is Waiting</h2>
-      <p class="text-slate-300 text-lg mt-5">Reserve your station, lock in your crew, and own the leaderboard tonight.</p>
-      <a href="pricing.html#book" class="inline-flex items-center gap-2 mt-9 btn-grad text-ink px-9 py-4 rounded-full font-bold text-lg transition">
-        Book Your Station <i class="ri-flashlight-line"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="bg-ink border-t border-white/10 text-slate-400 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-4 gap-10">
-      <div>
-        <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white mb-4">
-          <i class="ri-gamepad-line text-brand text-3xl"></i> NE<span class="text-gradient">XUS</span>
-        </a>
-        <p class="text-slate-400 text-sm">The neon-lit home base for gamers, streamers, and esports crews since 2019.</p>
-        <div class="flex gap-3 mt-5">
-          <a href="#" aria-label="Discord" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-discord-fill"></i></a>
-          <a href="#" aria-label="Twitch" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-twitch-fill"></i></a>
-          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-instagram-line"></i></a>
-          <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-youtube-fill"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-4">Explore</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
-          <li><a href="pricing.html" class="hover:text-cyber transition">Pricing</a></li>
-          <li><a href="events.html" class="hover:text-cyber transition">Events</a></li>
-          <li><a href="about.html" class="hover:text-cyber transition">About Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-4">Support</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="about.html#contact" class="hover:text-cyber transition">Contact</a></li>
-          <li><a href="pricing.html#book" class="hover:text-cyber transition">Book a Station</a></li>
-          <li><a href="privacy.html" class="hover:text-cyber transition">Privacy Policy</a></li>
-          <li><a href="terms.html" class="hover:text-cyber transition">House Rules</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-4">Join the Squad</h4>
-        <p class="text-slate-400 text-sm mb-3">Drop events &amp; deals straight to your inbox.</p>
-        <form class="flex" data-demo>
-          <input type="email" required placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-l-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand" />
-          <button class="btn-grad px-4 rounded-r-lg text-ink transition"><i class="ri-send-plane-fill"></i></button>
-        </form>
-      </div>
-    </div>
-    <div class="border-t border-white/10 mt-12 pt-6 text-center text-sm text-slate-500">
-      © <span id="year">2026</span> NEXUS Gaming Lounge. All rights reserved.
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <footer>© 2026 NEXUS Gaming Lounge Templates. Designed by Hemant Patkar.</footer>
 </body>
 </html>

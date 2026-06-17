@@ -2,7 +2,7 @@
 name: NEXUS — Gaming Café Template
 title: NEXUS — Gaming Café Template
 domain: Gaming &amp; Esports
-tagline: A dark, neon esports-lounge template with pricing, tournaments, and station booking.
+tagline: A dark esports-lounge template in four neon themes — with pricing, tournaments, and station booking.
 price: "$XX"
 image: /assets/img/screenshots/gaming-cafe-desktop.png
 screenshots:
@@ -17,8 +17,8 @@ features:
     desc: Booking form and pricing tiers for hourly, day pass, and membership plans.
   - title: Tournaments &amp; events
     desc: Featured event plus a filterable grid of upcoming tournaments and game nights.
-  - title: Café menu &amp; gear specs
-    desc: Snacks-and-drinks menu and a hardware spec showcase built for gamers.
+  - title: Four color themes
+    desc: Neon (purple/cyan), Toxic (lime/teal), Inferno (orange/magenta), and Arctic (sky/frost) — swap with one CSS block.
 description: A starter gaming-café / esports-lounge template — replace with your real template details, screenshots, demo, and purchase link.
 ---
 
