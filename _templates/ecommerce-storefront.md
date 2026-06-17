@@ -4,7 +4,10 @@ title: Storefront — E-Commerce Template
 domain: E-Commerce
 tagline: A clean, conversion-focused online store template with product grids and cart-ready layouts.
 price: "$XX"
-image: /assets/img/thumbnails/ecommerce.png
+image: /assets/img/screenshots/ecommerce-storefront-desktop.png
+screenshots:
+  - /assets/img/screenshots/ecommerce-storefront-desktop.png
+  - /assets/img/screenshots/ecommerce-storefront-mobile.png
 demo_url: "/templates/Ecommerce/"
 buy_url: "#"
 order: 1

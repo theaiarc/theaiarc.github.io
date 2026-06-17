@@ -6,7 +6,7 @@ status: coming-soon
 icon: fa-wallet
 accent: "#16a34a"
 order: 2
-featured: true
+featured: false
 screenshot: /assets/img/app-placeholder.svg
 android:
   apk: finance-tracker.apk

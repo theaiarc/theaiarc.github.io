@@ -29,10 +29,11 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
         {% assign tpl_limit = 5 | minus: app_count %}
         {% if tpl_limit > 0 %}
         {% for t in feat_tpls limit: tpl_limit %}
-        <a class="featured-slide" href="{% if t.demo_url and t.demo_url != '#' %}{{ t.demo_url }}{% else %}{{ t.url }}{% endif %}"{% if t.demo_url and t.demo_url != '#' %} target="_blank" rel="noopener"{% endif %} aria-label="{{ t.name | default: t.title }}">
+        {% assign tpl_first = false %}{% if forloop.first and app_count == 0 %}{% assign tpl_first = true %}{% endif %}
+        <a class="featured-slide{% if tpl_first %} is-active{% endif %}" href="{% if t.demo_url and t.demo_url != '#' %}{{ t.demo_url }}{% else %}{{ t.url }}{% endif %}"{% if t.demo_url and t.demo_url != '#' %} target="_blank" rel="noopener"{% endif %} aria-label="{{ t.name | default: t.title }}">
             {% assign art = t.featured_image | default: t.image %}
             {% if art %}
-            <img class="featured-bg" src="{{ art }}" alt="" loading="lazy">
+            <img class="featured-bg" src="{{ art }}" alt="" loading="{% if tpl_first %}eager{% else %}lazy{% endif %}">
             {% else %}
             <span class="featured-fallback" style="background: linear-gradient(135deg, #3b5bdb, #2f3b9e)"><i class="fa-solid fa-layer-group"></i></span>
             {% endif %}

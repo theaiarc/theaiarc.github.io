@@ -4,10 +4,14 @@ title: Decora — Home Decor Template
 domain: Home Decor
 tagline: An elegant template for home decor and interior brands, with product galleries and lookbooks.
 price: "$XX"
-image: /templates/Homedecor/assets/img/template.svg
+image: /assets/img/screenshots/home-decor-desktop.png
+screenshots:
+  - /assets/img/screenshots/home-decor-desktop.png
+  - /assets/img/screenshots/home-decor-mobile.png
 demo_url: "/templates/Homedecor/"
 buy_url: "#"
 order: 5
+featured: true
 features:
   - title: Product galleries
     desc: Show off furniture and decor with refined gallery layouts.

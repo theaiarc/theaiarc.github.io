@@ -4,7 +4,10 @@ title: Clinic — Healthcare Template
 domain: Healthcare
 tagline: A trustworthy template for clinics and practices, with appointments and services sections.
 price: "$XX"
-image: /assets/img/thumbnails/healthcare.png
+image: /assets/img/screenshots/healthcare-clinic-desktop.png
+screenshots:
+  - /assets/img/screenshots/healthcare-clinic-desktop.png
+  - /assets/img/screenshots/healthcare-clinic-mobile.png
 demo_url: "/templates/Healthcare/"
 buy_url: "#"
 order: 2

@@ -6,7 +6,7 @@ status: coming-soon
 icon: fa-file-invoice-dollar
 accent: "#2563eb"
 order: 3
-featured: true
+featured: false
 screenshot: /assets/img/app-placeholder.svg
 android:
   apk: accounting.apk

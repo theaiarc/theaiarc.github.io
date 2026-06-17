@@ -6,7 +6,7 @@ status: beta
 icon: fa-robot
 accent: "#7c3aed"
 order: 4
-featured: true
+featured: false
 screenshot: /assets/img/app-placeholder.svg
 description: A locally-run AI automation agent that automates tasks without sending your data to the cloud.
 features:

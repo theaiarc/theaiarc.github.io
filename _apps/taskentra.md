@@ -6,7 +6,7 @@ status: coming-soon
 icon: fa-list-check
 accent: "#0d9488"
 order: 1
-featured: true
+featured: false
 screenshot: /assets/img/app-placeholder.svg
 android:
   apk: taskentra.apk
