@@ -1971,3 +1971,51 @@ main {
     .featured-slide { transition: none; }
     .shelf-track, .gallery { scroll-behavior: auto; }
 }
+
+/* ---- Hero feature row: half-width featured banner + apps grid ---------- */
+.hero-feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+    align-items: stretch;
+    text-align: left;
+    margin-top: clamp(1.2rem, 3vw, 2rem);
+}
+.hero-feature-banner { min-width: 0; }
+/* Override the standalone banner sizing so it fills (stretches to) the row. */
+.hero-feature-banner .featured-banner {
+    margin: 0;
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 260px;
+}
+.hero-feature-apps { display: flex; flex-direction: column; min-width: 0; }
+.hero-apps-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+.hero-apps-head h2 {
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--heading);
+    margin: 0;
+}
+.hero-apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    flex: 1;
+    align-content: start;
+}
+.hero-apps-grid .app-card { padding: 1.1rem; }
+@media (max-width: 860px) {
+    .hero-feature-row { grid-template-columns: 1fr; }
+    .hero-feature-banner .featured-banner { aspect-ratio: 16 / 9; height: auto; min-height: 0; }
+}
+@media (max-width: 480px) {
+    .hero-apps-grid { grid-template-columns: 1fr; }
+}
