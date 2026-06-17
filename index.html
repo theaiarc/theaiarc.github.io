@@ -16,12 +16,13 @@ description: >-
         <div class="hero-feature-row reveal">
             <div class="hero-feature-banner">{% include featured-banner.html %}</div>
             <div class="hero-feature-apps">
-                <div class="hero-apps-head">
-                    <h2>Apps</h2>
-                    <a class="link-arrow" href="/apps/">All apps <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
                 <div class="hero-apps-grid">
-                    {% for app in apps %}{% include app-card.html app=app %}{% endfor %}
+                    {% for app in apps limit: 15 %}
+                    <a class="hero-app-tile reveal" href="{{ app.url }}">
+                        <span class="app-icon" style="background: {{ app.accent | default: '#3b5bdb' }}"><i class="fa-solid {{ app.icon | default: 'fa-rocket' }}"></i></span>
+                        <span class="hero-app-tile-name">{{ app.name | default: app.title }}</span>
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
