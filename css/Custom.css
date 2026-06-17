@@ -1175,6 +1175,8 @@ main {
 .page-subtitle { color: var(--text-muted); font-size: 1.05rem; margin: 0.6rem 0 0; max-width: 680px; }
 
 .page-body { padding-bottom: 3.5rem; }
+/* When a full-bleed CTA follows, it provides its own top padding — trim the gap. */
+.page-body:has(+ .cta-band) { padding-bottom: clamp(1.5rem, 4vw, 2.5rem); }
 
 /* ------------------------------ Services page ------------------------------ */
 .services-list { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem; }

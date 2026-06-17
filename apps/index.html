@@ -4,6 +4,7 @@ title: Apps
 subtitle: Products I'm building — crafted with the same care I bring to client work.
 permalink: /apps/
 description: Applications and products built by Hemant Patkar.
+show_cta: true
 ---
 
 {% assign all_apps = site.apps | sort: "order" %}
@@ -16,5 +17,3 @@ description: Applications and products built by Hemant Patkar.
 {% else %}
 <p class="text-secondary reveal">Apps are on the way — check back soon.</p>
 {% endif %}
-
-{% include cta.html %}

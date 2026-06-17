@@ -4,6 +4,7 @@ title: Templates
 subtitle: Ready-to-use website & web-app templates, crafted for a range of domains.
 permalink: /templates/
 description: Buy customizable website and web application templates by Hemant Patkar, across e-commerce, healthcare, real estate, and more.
+show_cta: true
 ---
 
 {% assign all_templates = site.templates | sort: "order" %}
@@ -16,5 +17,3 @@ description: Buy customizable website and web application templates by Hemant Pa
 {% else %}
 <p class="text-secondary reveal">Templates are on the way — check back soon.</p>
 {% endif %}
-
-{% include cta.html %}
