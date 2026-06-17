@@ -13,7 +13,7 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
         <a class="featured-slide{% if forloop.first %} is-active{% endif %}" href="{{ a.url }}" aria-label="{{ a.name | default: a.title }}">
             {% assign art = a.featured_image | default: a.screenshot %}
             {% if art %}
-            <img class="featured-bg" src="{{ art }}" alt="" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+            <img class="featured-bg" src="{{ art }}" alt="" loading="eager">
             {% else %}
             <span class="featured-fallback" style="background: linear-gradient(135deg, {{ a.accent | default: '#3b5bdb' }}, #2f3b9e)"><i class="fa-solid {{ a.icon | default: 'fa-rocket' }}"></i></span>
             {% endif %}
@@ -33,7 +33,7 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
         <a class="featured-slide{% if tpl_first %} is-active{% endif %}" href="{% if t.demo_url and t.demo_url != '#' %}{{ t.demo_url }}{% else %}{{ t.url }}{% endif %}"{% if t.demo_url and t.demo_url != '#' %} target="_blank" rel="noopener"{% endif %} aria-label="{{ t.name | default: t.title }}">
             {% assign art = t.featured_image | default: t.image %}
             {% if art %}
-            <img class="featured-bg" src="{{ art }}" alt="" loading="{% if tpl_first %}eager{% else %}lazy{% endif %}">
+            <img class="featured-bg" src="{{ art }}" alt="" loading="eager">
             {% else %}
             <span class="featured-fallback" style="background: linear-gradient(135deg, #3b5bdb, #2f3b9e)"><i class="fa-solid fa-layer-group"></i></span>
             {% endif %}
