@@ -11,7 +11,7 @@ A modern, dark, neon-lit, fully static gaming-café website built with **HTML + 
 | `template-inferno/` | Inferno | Orange + magenta — hot, aggressive FPS energy |
 | `template-arctic/` | Arctic | Icy sky-blue + frost — clean and cool |
 
-`index.html` (at the root) is a **theme chooser** that links to each live demo. All three themes share identical content and layout — only the color palette differs.
+`index.html` (at the root) is a **theme chooser** that links to each live demo. All four themes share identical content and layout — only the color palette differs.
 
 ## Pages (in every theme)
 
@@ -28,7 +28,7 @@ A modern, dark, neon-lit, fully static gaming-café website built with **HTML + 
 
 ```
 .
-├── index.html              # theme chooser (links to the three demos)
+├── index.html              # theme chooser (links to the four demos)
 ├── README.md
 ├── CREDITS.md
 ├── robots.txt
@@ -78,7 +78,7 @@ All color identity lives in **CSS variables** in each theme's `css/style.css`:
 The Tailwind config in each HTML file maps `brand` / `cyber` / `ink` to these vars via
 `rgb(var(--token) / <alpha-value>)`, so all `text-brand`, `bg-cyber/20`, etc. utilities
 follow the palette. **To make a new theme, copy a `template-*` folder and change only the
-six values in `:root`.** The markup and JS are identical across all three.
+six values in `:root`.** The markup and JS are identical across all four.
 
 ## Customizing
 
