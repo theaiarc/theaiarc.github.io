@@ -11,8 +11,7 @@ description: >-
 {% assign tpls = site.templates | sort: "order" %}
 
 <section class="hero">
-    <div class="container" style="text-align:center">       
-        <h1 class="hero-title reveal" style="max-width:760px;margin:0 auto 1.4rem">Discover free apps &amp; ready-to-use templates.</h1>        
+    <div class="container" style="text-align:center">
         <div class="hero-feature-row reveal">
             <div class="hero-feature-banner">{% include featured-banner.html %}</div>
             <div class="hero-feature-apps">
@@ -70,7 +69,7 @@ description: >-
             </a>
             {% else %}
             {% assign rhref = item.url %}{% if item.demo_url and item.demo_url != "#" %}{% assign rhref = item.demo_url %}{% endif %}
-            <a class="topchart-row reveal" href="{{ rhref }}"{% if item.demo_url and item.demo_url != "#" %} target="_blank" rel="noopener"{% endif %}
+            <a class="topchart-row reveal" href="{{ rhref }}" {% if item.demo_url and item.demo_url !="#" %} target="_blank" rel="noopener" {% endif %}
                data-type="template"
                data-name="{{ item.name | default: item.title | downcase }}"
                data-tags="{{ item.tagline | downcase }}"
