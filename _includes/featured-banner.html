@@ -9,7 +9,7 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
 {% if slides.size > 0 %}
 <section class="featured-banner reveal" data-carousel aria-roledescription="carousel" aria-label="Featured">
     <div class="featured-track">
-        {% for a in feat_apps limit: 5 %}
+        {% for a in feat_apps limit: 6 %}
         <a class="featured-slide{% if forloop.first %} is-active{% endif %}" href="{{ a.url }}" aria-label="{{ a.name | default: a.title }}">
             {% assign art = a.featured_image | default: a.screenshot %}
             {% if art %}
@@ -20,7 +20,7 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
         </a>
         {% endfor %}
         {% assign app_count = feat_apps.size %}
-        {% assign tpl_limit = 5 | minus: app_count %}
+        {% assign tpl_limit = 6 | minus: app_count %}
         {% if tpl_limit > 0 %}
         {% for t in feat_tpls limit: tpl_limit %}
         {% assign tpl_first = false %}{% if forloop.first and app_count == 0 %}{% assign tpl_first = true %}{% endif %}
