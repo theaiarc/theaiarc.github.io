@@ -17,12 +17,6 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
             {% else %}
             <span class="featured-fallback" style="background: linear-gradient(135deg, {{ a.accent | default: '#3b5bdb' }}, #2f3b9e)"><i class="fa-solid {{ a.icon | default: 'fa-rocket' }}"></i></span>
             {% endif %}
-            <div class="featured-overlay">
-                <span class="featured-kicker">Featured app</span>
-                <h3>{{ a.name | default: a.title }}</h3>
-                <p>{{ a.tagline }}</p>
-                <span class="featured-meta">{% if a.status %}<span class="badge-status status-{{ a.status }}">{{ a.status | replace: '-', ' ' }}</span>{% endif %}<span class="featured-cta">View <i class="fa-solid fa-arrow-right"></i></span></span>
-            </div>
         </a>
         {% endfor %}
         {% assign app_count = feat_apps.size %}
@@ -37,12 +31,6 @@ store.js handles auto-rotate, dots, pause-on-hover, prefers-reduced-motion.
             {% else %}
             <span class="featured-fallback" style="background: linear-gradient(135deg, #3b5bdb, #2f3b9e)"><i class="fa-solid fa-layer-group"></i></span>
             {% endif %}
-            <div class="featured-overlay">
-                <span class="featured-kicker">Featured template</span>
-                <h3>{{ t.name | default: t.title }}</h3>
-                <p>{{ t.tagline }}</p>
-                <span class="featured-meta">{% if t.domain %}<span class="tpl-domain-badge">{{ t.domain }}</span>{% endif %}<span class="featured-cta">View <i class="fa-solid fa-arrow-right"></i></span></span>
-            </div>
         </a>
         {% endfor %}
         {% endif %}
