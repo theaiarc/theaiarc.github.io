@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing &amp; Memberships — NEXUS Gaming Lounge</title>
+  <meta name="description" content="NEXUS Gaming Lounge rates: hourly play, day passes, and memberships. Plus our café menu of snacks, fuel, and drinks. Book your station." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      brand: { DEFAULT: '#a855f7', dark: '#7c3aed', light: '#c084fc' }, cyber: '#22d3ee', ink: '#0a0a12',
+    } } } };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-ink text-slate-200 antialiased">
+
+  <!-- ===== Navbar ===== -->
+  <header id="navbar" data-transparent="false" class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur border-b border-white/10 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white">
+        <i class="ri-gamepad-line text-brand text-3xl"></i> NE<span class="text-gradient">XUS</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-slate-300 font-medium">
+        <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
+        <li><a href="pricing.html" class="text-cyber transition">Pricing</a></li>
+        <li><a href="events.html" class="hover:text-cyber transition">Events</a></li>
+        <li><a href="about.html" class="hover:text-cyber transition">About</a></li>
+      </ul>
+      <a href="#book" class="hidden md:inline-flex items-center gap-2 btn-grad text-ink px-5 py-2.5 rounded-full font-bold transition">
+        Book a Station <i class="ri-arrow-right-line"></i>
+      </a>
+      <button id="menu-btn" class="md:hidden text-white text-3xl" aria-label="Toggle menu"><i class="ri-menu-line"></i></button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-ink/95 backdrop-blur px-5 pb-6 border-b border-white/10">
+      <ul class="flex flex-col gap-4 text-white font-medium pt-2">
+        <li><a href="index.html" class="block py-2 hover:text-cyber">Home</a></li>
+        <li><a href="pricing.html" class="block py-2 text-cyber">Pricing</a></li>
+        <li><a href="events.html" class="block py-2 hover:text-cyber">Events</a></li>
+        <li><a href="about.html" class="block py-2 hover:text-cyber">About</a></li>
+        <li><a href="#book" class="block mt-2 btn-grad text-ink text-center py-2.5 rounded-full font-bold">Book a Station</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Page header ===== -->
+  <section class="relative pt-36 pb-16 grid-bg overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand/10 to-transparent"></div>
+    <div class="relative max-w-3xl mx-auto text-center px-5 reveal">
+      <p class="text-cyber font-semibold uppercase tracking-widest">Pricing</p>
+      <h1 class="text-4xl sm:text-5xl font-black text-white mt-2 text-glow">Pick Your Plan</h1>
+      <p class="text-slate-400 mt-4">Walk-in or member, hour or all-day — there's a tier for every kind of grind.</p>
+    </div>
+  </section>
+
+  <!-- ===== Plans ===== -->
+  <section class="pb-8 bg-ink">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-8">
+      <!-- Hourly -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 card-lift reveal">
+        <h3 class="text-xl font-bold text-white">Hourly</h3>
+        <p class="text-slate-400 text-sm mt-1">Pay as you play.</p>
+        <p class="text-5xl font-black display text-white mt-6">$6<span class="text-lg text-slate-400 font-normal">/hr</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300">
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Any open PC or console</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Free fiber Wi-Fi</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> 1 free coffee refill</li>
+          <li class="flex gap-2 text-slate-500"><i class="ri-close-line"></i> Sim racing rigs</li>
+        </ul>
+        <a href="#book" class="mt-8 block text-center bg-white/5 hover:bg-white/10 border border-white/15 text-white py-3 rounded-full font-semibold transition">Choose Hourly</a>
+      </div>
+      <!-- Day Pass (highlight) -->
+      <div class="bg-gradient-to-b from-brand/20 to-transparent border border-brand/60 rounded-2xl p-8 glow reveal relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyber text-ink text-xs font-bold px-3 py-1 rounded-full">Best Value</span>
+        <h3 class="text-xl font-bold text-white">Day Pass</h3>
+        <p class="text-slate-400 text-sm mt-1">Open to close, no clock.</p>
+        <p class="text-5xl font-black display text-white mt-6">$29<span class="text-lg text-slate-400 font-normal">/day</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300">
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Unlimited PC &amp; console time</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> 1 hour of sim racing</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Bottomless coffee &amp; soda</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Priority station swaps</li>
+        </ul>
+        <a href="#book" class="mt-8 block text-center btn-grad text-ink py-3 rounded-full font-bold transition">Choose Day Pass</a>
+      </div>
+      <!-- Membership -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 card-lift reveal">
+        <h3 class="text-xl font-bold text-white">Member</h3>
+        <p class="text-slate-400 text-sm mt-1">For the regulars.</p>
+        <p class="text-5xl font-black display text-white mt-6">$49<span class="text-lg text-slate-400 font-normal">/mo</span></p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-300">
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> 20% off all hourly rates</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Free tournament entry</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Reserved locker &amp; profile</li>
+          <li class="flex gap-2"><i class="ri-check-line text-cyber"></i> Members-only Discord</li>
+        </ul>
+        <a href="#book" class="mt-8 block text-center bg-white/5 hover:bg-white/10 border border-white/15 text-white py-3 rounded-full font-semibold transition">Become a Member</a>
+      </div>
+    </div>
+    <p class="text-center text-slate-500 text-sm mt-8 px-5">Students get 15% off with a valid ID. Group of 5+? Ask about squad rates.</p>
+  </section>
+
+  <!-- ===== Café menu ===== -->
+  <section class="py-20 bg-gradient-to-b from-ink to-[#11091f]">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <p class="text-cyber font-semibold uppercase tracking-widest">The Café</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Fuel for the Grind</h2>
+        <p class="text-slate-400 mt-4">Served right to your station so you never have to leave the lobby.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Snacks -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 reveal">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2"><i class="ri-restaurant-2-line text-brand-light"></i> Snacks &amp; Bites</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-300">Loaded Nacho Fries</span><span class="text-cyber font-semibold">$7</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Crispy Chicken Wings (8)</span><span class="text-cyber font-semibold">$9</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Margherita Flatbread</span><span class="text-cyber font-semibold">$8</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Pretzel Bites &amp; Cheese</span><span class="text-cyber font-semibold">$5</span></li>
+          </ul>
+        </div>
+        <!-- Energy -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 reveal">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2"><i class="ri-flashlight-line text-brand-light"></i> Energy &amp; Fuel</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-300">NEXUS Energy Can</span><span class="text-cyber font-semibold">$4</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Iced Triple Espresso</span><span class="text-cyber font-semibold">$5</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Protein Shake</span><span class="text-cyber font-semibold">$6</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Electrolyte Slush</span><span class="text-cyber font-semibold">$4</span></li>
+          </ul>
+        </div>
+        <!-- Drinks -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-7 reveal">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2"><i class="ri-cup-line text-brand-light"></i> Coffee &amp; Cold</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-slate-300">Bottomless Drip Coffee</span><span class="text-cyber font-semibold">$3</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Boba Milk Tea</span><span class="text-cyber font-semibold">$5</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Fountain Soda (refills)</span><span class="text-cyber font-semibold">$3</span></li>
+            <li class="flex justify-between"><span class="text-slate-300">Sparkling Water</span><span class="text-cyber font-semibold">$2</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Booking ===== -->
+  <section id="book" class="py-20 bg-ink scroll-mt-24">
+    <div class="max-w-3xl mx-auto px-5 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+        <p class="text-cyber font-semibold uppercase tracking-widest">Reserve</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Book Your Station</h2>
+        <p class="text-slate-400 mt-4">Lock in your spot — we'll have it lit up and ready when you arrive.</p>
+      </div>
+      <form id="contact-form" class="bg-white/5 border border-white/10 rounded-2xl p-7 grid sm:grid-cols-2 gap-5 reveal">
+        <div class="flex flex-col">
+          <label class="text-xs font-semibold text-slate-400 mb-1">Gamer Tag / Name</label>
+          <input type="text" required placeholder="xX_Player_Xx" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand" />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-xs font-semibold text-slate-400 mb-1">Email or Phone</label>
+          <input type="text" required placeholder="you@example.com" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand" />
+        </div>
+        <div class="flex flex-col">
+          <label class="text-xs font-semibold text-slate-400 mb-1">Zone</label>
+          <select class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand">
+            <option class="bg-ink">PC Battlestation</option>
+            <option class="bg-ink">Console Lounge</option>
+            <option class="bg-ink">Sim Racing Rig</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <label class="text-xs font-semibold text-slate-400 mb-1">Date &amp; Time</label>
+          <input type="datetime-local" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand" />
+        </div>
+        <div class="flex flex-col sm:col-span-2">
+          <label class="text-xs font-semibold text-slate-400 mb-1">Players &amp; Notes</label>
+          <textarea rows="3" placeholder="Squad of 4, want stations together…" class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand"></textarea>
+        </div>
+        <div class="sm:col-span-2">
+          <button type="submit" class="w-full btn-grad text-ink py-3.5 rounded-full font-bold transition inline-flex items-center justify-center gap-2">
+            Reserve Station <i class="ri-flashlight-line"></i>
+          </button>
+          <p id="form-status" class="hidden mt-4 text-center text-cyber font-semibold"><i class="ri-checkbox-circle-line"></i> Booking request sent — see you at NEXUS! (demo form)</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-ink border-t border-white/10 text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white mb-4">
+          <i class="ri-gamepad-line text-brand text-3xl"></i> NE<span class="text-gradient">XUS</span>
+        </a>
+        <p class="text-slate-400 text-sm">The neon-lit home base for gamers, streamers, and esports crews since 2019.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Discord" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-discord-fill"></i></a>
+          <a href="#" aria-label="Twitch" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-twitch-fill"></i></a>
+          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Explore</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
+          <li><a href="pricing.html" class="hover:text-cyber transition">Pricing</a></li>
+          <li><a href="events.html" class="hover:text-cyber transition">Events</a></li>
+          <li><a href="about.html" class="hover:text-cyber transition">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Support</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html#contact" class="hover:text-cyber transition">Contact</a></li>
+          <li><a href="#book" class="hover:text-cyber transition">Book a Station</a></li>
+          <li><a href="privacy.html" class="hover:text-cyber transition">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-cyber transition">House Rules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Join the Squad</h4>
+        <p class="text-slate-400 text-sm mb-3">Drop events &amp; deals straight to your inbox.</p>
+        <form class="flex" data-demo>
+          <input type="email" required placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-l-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand" />
+          <button class="btn-grad px-4 rounded-r-lg text-ink transition"><i class="ri-send-plane-fill"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-12 pt-6 text-center text-sm text-slate-500">
+      © <span id="year">2026</span> NEXUS Gaming Lounge. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

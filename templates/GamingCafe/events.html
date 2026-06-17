@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tournaments &amp; Events — NEXUS Gaming Lounge</title>
+  <meta name="description" content="Upcoming tournaments and events at NEXUS Gaming Lounge — Valorant, FIFA, Tekken, and casual game nights with real prize pools." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: {
+      brand: { DEFAULT: '#a855f7', dark: '#7c3aed', light: '#c084fc' }, cyber: '#22d3ee', ink: '#0a0a12',
+    } } } };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-ink text-slate-200 antialiased">
+
+  <!-- ===== Navbar ===== -->
+  <header id="navbar" data-transparent="false" class="fixed top-0 inset-x-0 z-50 bg-ink/90 backdrop-blur border-b border-white/10 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white">
+        <i class="ri-gamepad-line text-brand text-3xl"></i> NE<span class="text-gradient">XUS</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-slate-300 font-medium">
+        <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
+        <li><a href="pricing.html" class="hover:text-cyber transition">Pricing</a></li>
+        <li><a href="events.html" class="text-cyber transition">Events</a></li>
+        <li><a href="about.html" class="hover:text-cyber transition">About</a></li>
+      </ul>
+      <a href="pricing.html#book" class="hidden md:inline-flex items-center gap-2 btn-grad text-ink px-5 py-2.5 rounded-full font-bold transition">
+        Book a Station <i class="ri-arrow-right-line"></i>
+      </a>
+      <button id="menu-btn" class="md:hidden text-white text-3xl" aria-label="Toggle menu"><i class="ri-menu-line"></i></button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-ink/95 backdrop-blur px-5 pb-6 border-b border-white/10">
+      <ul class="flex flex-col gap-4 text-white font-medium pt-2">
+        <li><a href="index.html" class="block py-2 hover:text-cyber">Home</a></li>
+        <li><a href="pricing.html" class="block py-2 hover:text-cyber">Pricing</a></li>
+        <li><a href="events.html" class="block py-2 text-cyber">Events</a></li>
+        <li><a href="about.html" class="block py-2 hover:text-cyber">About</a></li>
+        <li><a href="pricing.html#book" class="block mt-2 btn-grad text-ink text-center py-2.5 rounded-full font-bold">Book a Station</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Page header ===== -->
+  <section class="relative pt-36 pb-16 grid-bg overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand/10 to-transparent"></div>
+    <div class="relative max-w-3xl mx-auto text-center px-5 reveal">
+      <p class="text-cyber font-semibold uppercase tracking-widest">Events</p>
+      <h1 class="text-4xl sm:text-5xl font-black text-white mt-2 text-glow">Tournaments &amp; Game Nights</h1>
+      <p class="text-slate-400 mt-4">Compete for prize pools, climb the house leaderboard, or just show up for the vibes.</p>
+    </div>
+  </section>
+
+  <!-- ===== Featured event ===== -->
+  <section class="pb-4 bg-ink">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="relative rounded-3xl overflow-hidden border border-brand/40 glow reveal">
+        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1600&q=80" alt="Esports tournament stage" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent"></div>
+        <div class="relative p-8 sm:p-12 max-w-xl">
+          <span class="inline-flex items-center gap-2 bg-cyber text-ink text-xs font-bold px-3 py-1 rounded-full"><span class="w-2 h-2 rounded-full bg-ink pulse-dot"></span> Flagship Event</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white mt-4">NEXUS Valorant Clash</h2>
+          <p class="text-slate-300 mt-3">5v5 single-elimination bracket. 16 teams, one champion. $1,000 prize pool and a season of bragging rights.</p>
+          <div class="flex flex-wrap gap-5 mt-6 text-sm text-slate-300">
+            <span><i class="ri-calendar-event-line text-cyber"></i> Sat, Jul 12</span>
+            <span><i class="ri-time-line text-cyber"></i> 4:00 PM</span>
+            <span><i class="ri-trophy-line text-cyber"></i> $1,000 pool</span>
+          </div>
+          <a href="#register" class="inline-flex items-center gap-2 mt-7 btn-grad text-ink px-7 py-3 rounded-full font-bold transition">Register Your Team <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Filters + grid ===== -->
+  <section class="py-16 bg-ink">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+        <button data-filter="all" class="filter-active px-5 py-2 rounded-full border border-white/15 text-sm font-semibold transition">All</button>
+        <button data-filter="fps" class="px-5 py-2 rounded-full border border-white/15 text-sm font-semibold text-slate-300 hover:text-white transition">FPS</button>
+        <button data-filter="fighting" class="px-5 py-2 rounded-full border border-white/15 text-sm font-semibold text-slate-300 hover:text-white transition">Fighting</button>
+        <button data-filter="sports" class="px-5 py-2 rounded-full border border-white/15 text-sm font-semibold text-slate-300 hover:text-white transition">Sports</button>
+        <button data-filter="casual" class="px-5 py-2 rounded-full border border-white/15 text-sm font-semibold text-slate-300 hover:text-white transition">Casual</button>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event card -->
+        <article data-category="fps" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=800&q=80" alt="FPS tournament" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-brand text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">FPS</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Fri, Jul 4 · 7:00 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">CS2 Headshot Showdown</h3>
+            <p class="text-slate-400 text-sm mt-2">1v1 aim duels. Best of 5. Winner takes the pot.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">$200 pool</span><a href="#register" class="text-cyber font-semibold hover:underline">Register →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="fighting" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80" alt="Fighting game tournament" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-cyber text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">Fighting</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Sun, Jul 6 · 5:00 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">Tekken 8 King of Iron Fist</h3>
+            <p class="text-slate-400 text-sm mt-2">Double-elimination bracket. Bring your main.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">$300 pool</span><a href="#register" class="text-cyber font-semibold hover:underline">Register →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="sports" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80" alt="FIFA tournament" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-brand-light text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">Sports</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Wed, Jul 9 · 6:30 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">FC 25 Cup Night</h3>
+            <p class="text-slate-400 text-sm mt-2">Group stage into knockouts. Console bays, big screens.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">$150 pool</span><a href="#register" class="text-cyber font-semibold hover:underline">Register →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="fps" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80" alt="Valorant tournament" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-brand text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">FPS</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Sat, Jul 12 · 4:00 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">NEXUS Valorant Clash</h3>
+            <p class="text-slate-400 text-sm mt-2">5v5 flagship bracket. 16 teams. Our biggest of the season.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">$1,000 pool</span><a href="#register" class="text-cyber font-semibold hover:underline">Register →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="casual" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Casual game night" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-cyber text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">Casual</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Every Thu · 8:00 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">Co-op Game Night</h3>
+            <p class="text-slate-400 text-sm mt-2">Party games, couch co-op, and free pretzel bites. No entry fee.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">Free</span><a href="#register" class="text-cyber font-semibold hover:underline">RSVP →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="casual" class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-lift reveal">
+          <div class="img-zoom-wrap relative overflow-hidden h-44">
+            <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=800&q=80" alt="Sim racing league" class="img-zoom w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-cyber text-ink text-xs font-bold px-2.5 py-1 rounded-full uppercase">Casual</span>
+          </div>
+          <div class="p-6">
+            <p class="text-cyber text-xs font-semibold"><i class="ri-calendar-line"></i> Every Tue · 7:00 PM</p>
+            <h3 class="text-lg font-bold text-white mt-2">Sim Racing League</h3>
+            <p class="text-slate-400 text-sm mt-2">Weekly time-trial ladder on the full-motion rigs.</p>
+            <div class="flex items-center justify-between border-t border-white/10 mt-4 pt-4 text-sm">
+              <span class="text-white font-bold">$10 entry</span><a href="#register" class="text-cyber font-semibold hover:underline">Register →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Register CTA ===== -->
+  <section id="register" class="relative py-24 grid-bg scroll-mt-24">
+    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=80" alt="Gaming arena" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ink/85"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center px-5 reveal">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white text-glow">Ready to Compete?</h2>
+      <p class="text-slate-300 text-lg mt-5">Members enter every house tournament free. Otherwise, grab your spot before the bracket fills up.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="pricing.html#book" class="btn-grad text-ink px-9 py-4 rounded-full font-bold text-lg transition inline-flex items-center justify-center gap-2">Register a Team <i class="ri-team-line"></i></a>
+        <a href="pricing.html" class="bg-white/5 hover:bg-white/10 border border-white/20 text-white px-9 py-4 rounded-full font-semibold text-lg transition">Become a Member</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-ink border-t border-white/10 text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-4 gap-10">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 text-2xl font-extrabold display text-white mb-4">
+          <i class="ri-gamepad-line text-brand text-3xl"></i> NE<span class="text-gradient">XUS</span>
+        </a>
+        <p class="text-slate-400 text-sm">The neon-lit home base for gamers, streamers, and esports crews since 2019.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Discord" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-discord-fill"></i></a>
+          <a href="#" aria-label="Twitch" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-twitch-fill"></i></a>
+          <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/5 hover:bg-brand hover:text-ink flex items-center justify-center transition"><i class="ri-youtube-fill"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Explore</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-cyber transition">Home</a></li>
+          <li><a href="pricing.html" class="hover:text-cyber transition">Pricing</a></li>
+          <li><a href="events.html" class="hover:text-cyber transition">Events</a></li>
+          <li><a href="about.html" class="hover:text-cyber transition">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Support</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html#contact" class="hover:text-cyber transition">Contact</a></li>
+          <li><a href="pricing.html#book" class="hover:text-cyber transition">Book a Station</a></li>
+          <li><a href="privacy.html" class="hover:text-cyber transition">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-cyber transition">House Rules</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4">Join the Squad</h4>
+        <p class="text-slate-400 text-sm mb-3">Drop events &amp; deals straight to your inbox.</p>
+        <form class="flex" data-demo>
+          <input type="email" required placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-l-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-brand" />
+          <button class="btn-grad px-4 rounded-r-lg text-ink transition"><i class="ri-send-plane-fill"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-12 pt-6 text-center text-sm text-slate-500">
+      © <span id="year">2026</span> NEXUS Gaming Lounge. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
