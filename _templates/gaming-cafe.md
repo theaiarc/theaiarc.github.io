@@ -3,7 +3,7 @@ name: NEXUS — Gaming Café Template
 title: NEXUS — Gaming Café Template
 domain: Gaming &amp; Esports
 tagline: A dark esports-lounge template in four neon themes — with pricing, tournaments, and station booking.
-price: "$XX"
+price: "$5"
 image: /assets/img/screenshots/gaming-cafe-desktop.png
 screenshots:
   - /assets/img/screenshots/gaming-cafe-desktop.png

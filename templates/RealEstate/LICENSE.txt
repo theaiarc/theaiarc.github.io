@@ -1,0 +1,59 @@
+================================================================================
+ FREE APP SOLUTIONS — WEBSITE TEMPLATE LICENSE
+================================================================================
+
+ Product : Estate — Real Estate Template
+ Author  : Hemant Patkar (Free App Solutions)
+ Website : https://freeappsolutions.com
+ Copyright (c) 2026 Hemant Patkar. All rights reserved.
+
+--------------------------------------------------------------------------------
+ 1. LICENSE GRANT
+--------------------------------------------------------------------------------
+ By purchasing this template you ("the Licensee") are granted a non-exclusive,
+ worldwide, perpetual license to use, modify, and deploy this template, subject
+ to the terms below. One purchase covers one end product — a single website or
+ web app that you build with this template.
+
+--------------------------------------------------------------------------------
+ 2. YOU MAY
+--------------------------------------------------------------------------------
+ - Use the template to build a website for yourself or for a single client.
+ - Modify the HTML, CSS, JavaScript, and assets to fit your project.
+ - Deploy the end product on any hosting you choose.
+ - Use it for personal or commercial projects.
+
+--------------------------------------------------------------------------------
+ 3. YOU MAY NOT
+--------------------------------------------------------------------------------
+ - Resell, redistribute, sublicense, share, or give away the template files
+   themselves (modified or unmodified).
+ - Offer the template (or a derivative of it) on any theme/template
+   marketplace, website builder, or "starter kit" to third parties.
+ - Use a single license for multiple unrelated end products. Purchase one
+   license per end product.
+ - Claim authorship of the original template design.
+
+--------------------------------------------------------------------------------
+ 4. THIRD-PARTY ASSETS
+--------------------------------------------------------------------------------
+ Demo images, icons, and fonts are included for demonstration only and may be
+ governed by their own licenses (see CREDITS where provided). They are not
+ owned by Free App Solutions. Replace demo media with your own licensed assets
+ before launching a production site where required.
+
+--------------------------------------------------------------------------------
+ 5. NO WARRANTY
+--------------------------------------------------------------------------------
+ THIS TEMPLATE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY OR
+ FITNESS FOR A PARTICULAR PURPOSE. THE AUTHOR SHALL NOT BE LIABLE FOR ANY
+ CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS TEMPLATE.
+
+--------------------------------------------------------------------------------
+ 6. SUPPORT
+--------------------------------------------------------------------------------
+ Questions or customization requests: https://freeappsolutions.com
+
+ Thank you for your purchase!
+================================================================================

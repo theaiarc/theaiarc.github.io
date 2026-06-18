@@ -3,7 +3,7 @@ name: Estate — Real Estate Template
 title: Estate — Real Estate Template
 domain: Real Estate
 tagline: A modern property-listings template with featured listings and agent profiles.
-price: "$XX"
+price: "$5"
 image: /assets/img/screenshots/realestate-listings-desktop.png
 screenshots:
   - /assets/img/screenshots/realestate-listings-desktop.png

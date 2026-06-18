@@ -3,7 +3,7 @@ name: Glow — Beauty Salon Template
 title: Glow — Beauty Salon Template
 domain: Beauty Salon
 tagline: A polished template for salons and spas, with services, pricing, and appointment sections.
-price: "$XX"
+price: "$5"
 image: /assets/img/screenshots/beauty-salon-desktop.png
 screenshots:
   - /assets/img/screenshots/beauty-salon-desktop.png

@@ -3,7 +3,7 @@ name: Vogue — Fashion Store Template
 title: Vogue — Fashion Store Template
 domain: Fashion
 tagline: A stylish fashion e-commerce template with collections, product pages, and a cart-ready layout.
-price: "$XX"
+price: "$5"
 image: /assets/img/screenshots/fashion-store-desktop.png
 screenshots:
   - /assets/img/screenshots/fashion-store-desktop.png

@@ -434,3 +434,6 @@ node_modules/
 _site/
 .jekyll-cache/
 Gemfile.lock
+
+# Paid template deliverables — built locally, uploaded to the checkout provider (never published)
+/dist/

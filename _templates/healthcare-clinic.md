@@ -3,7 +3,7 @@ name: Clinic — Healthcare Template
 title: Clinic — Healthcare Template
 domain: Healthcare
 tagline: A trustworthy template for clinics and practices, with appointments and services sections.
-price: "$XX"
+price: "$5"
 image: /assets/img/screenshots/healthcare-clinic-desktop.png
 screenshots:
   - /assets/img/screenshots/healthcare-clinic-desktop.png
